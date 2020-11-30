@@ -1,7 +1,7 @@
 from flask import (
     Blueprint, request, jsonify
 )
-from .databases import SmsSign, SmsTemplate
+from .databases import SmsSign, SmsTemplate, User
 from flaskr import db
 import uuid
 # import json
@@ -12,18 +12,52 @@ tp = Blueprint('smstemplateview', __name__)
 
 # tp = Blueprint('smstemplate', __name__, url_prefix='/smstemplate')
 
-
-# @tp.route("/<action>", methods=['POST', 'GET'])
 @tp.route("/", methods=['POST', 'GET'])
 def index():
-    action = request.headers['X-Tc-Action']
-    req = request.json
+    try:
+        action = request.headers['X-Tc-Action']
+        secretId = request.headers['Authorization']
+        secretId = str(secretId).split(',')[0].split('/')[0].split('=')[1]
+        req = request.json
+    except Exception:
+        return {
+            "Response": {
+                "Error": {
+                    "Code": "FailedOperation.FailResolvePacket",
+                    "Message": "请求包解析失败,请检查检查请求是否正确"
+                },
+                "RequestId": uuid.uuid4()
+            }
+        }
+
+    if not isvalid(secretId):
+        return {
+            "Response": {
+                "Error": {
+                    "Code": "AuthFailure.InvalidSecretId",
+                    "Message": "密钥非法"
+                },
+                "RequestId": uuid.uuid4()
+            }
+        }
+
+    if action == 'SendSms':
+        return {
+            "Response": {
+                "SendStatusSet": [
+                ],
+                "RequestId": uuid.uuid4()
+            }
+        }
+
     if action == 'AddSmsTemplate':
         template = SmsTemplate(templateName=req['TemplateName'],
                                templateContent=req['TemplateContent'],
                                smsType=req['SmsType'],
                                international=req['International'],
-                               remark=req['Remark'])
+                               remark=req['Remark'],
+                               secretId=secretId
+                               )
         db.session.add(template)
         db.session.commit()
         return {
@@ -38,14 +72,25 @@ def index():
         # return {"uuid": uuid.uuid4(), 'id': template.templateId}
     # update
     if action == 'ModifySmsTemplate':
-        template = SmsTemplate.query.filter_by(templateId=req['TemplateId']).first()
+        template = SmsTemplate.query.filter(and_(SmsTemplate.templateId == req['TemplateId'],
+                                                 SmsTemplate.secretId == secretId,
+                                                 )).first()
+        if not template:
+            return {
+                "Response": {
+                    "Error": {
+                        "Code": "FailedOperation.MissingTemplateToModify",
+                        "Message": "模板不存在"
+                    },
+                    "RequestId": uuid.uuid4()
+                }
+            }
         template.templateName = req['TemplateName']
         template.templateContent = req['TemplateContent']
         template.smsType = req['SmsType']
         template.international = req['International']
         template.remark = req['Remark']
         template.statusCode = 0
-
         db.session.commit()
         return {
             "Response": {
@@ -57,7 +102,8 @@ def index():
         }
     # query
     if action == 'DescribeSmsTemplateList':
-        templates = SmsTemplate.query.filter(SmsTemplate.templateId.in_(req['TemplateIdSet'])).all()
+        templates = SmsTemplate.query.filter(
+            and_(SmsTemplate.templateId.in_(req['TemplateIdSet']), SmsTemplate.secretId == secretId)).all()
         print([i.to_json() for i in templates])
         return {
             "Response": {
@@ -75,6 +121,7 @@ def index():
                           proofImage=req['ProofImage'],
                           commissionImage=req['CommissionImage'],
                           remark=req['Remark'],
+                          secretId=secretId
                           )
         db.session.add(smsSign)
         db.session.commit()
@@ -88,7 +135,18 @@ def index():
             }
         }
     if action == 'ModifySmsSign':
-        smsSign = SmsSign.query.filter_by(signId=req['SignId']).first()
+        smsSign = SmsSign.query.filter(and_(SmsSign.signId == req['SignId'],
+                                            SmsSign.secretId == secretId)).first()
+        if not smsSign:
+            return {
+                "Response": {
+                    "Error": {
+                        "Code": "FailedOperation.MissingSignatureToModify",
+                        "Message": "签名不存在"
+                    },
+                    "RequestId": uuid.uuid4()
+                }
+            }
         smsSign.signName = req['SignName'],
         smsSign.signType = req['SignType'],
         smsSign.documentType = req['DocumentType'],
@@ -112,7 +170,8 @@ def index():
 
     if action == 'DescribeSmsSignList':
         ssmsSigns = SmsSign.query.filter(and_(SmsSign.signId.in_(req['SignIdSet']),
-                                              SmsSign.international == req['International']
+                                              SmsSign.international == req['International'],
+                                              SmsSign.secretId == secretId,
                                               )).all()
         # print(json.dumps([i.to_json() for i in ssmsSigns]))
         return {
@@ -121,3 +180,10 @@ def index():
                 "RequestId": uuid.uuid4()
             }
         }
+
+
+def isvalid(secretId):
+    user = User.query.filter(and_(User.secretId == secretId, User.status == True)).all()
+    if user:
+        return True
+    return False

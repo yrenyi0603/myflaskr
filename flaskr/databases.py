@@ -1,17 +1,16 @@
-from flask_sqlalchemy import SQLAlchemy
-from flaskr import db, create_app
+from flaskr import db
 import datetime
-import time
+
 from flask_admin.model import typefmt
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    secretId = db.Column(db.String(100), unique=True, nullable=False)
+    status = db.Column(db.Boolean)
 
     def __repr__(self):
-        return '<User %r>' % self.username
-
+        return '<User %r>' % self.secretId
 
 
 class SmsTemplate(db.Model):
@@ -25,14 +24,15 @@ class SmsTemplate(db.Model):
     statusCode = db.Column(db.Integer, default=0)
     reviewReply = db.Column(db.String(500))
     createTime = db.Column(db.DateTime, default=datetime.datetime.now)
+    secretId = db.Column(db.String(100))
 
-    def __init__(self, templateName, templateContent, smsType, international, remark):
+    def __init__(self, templateName, templateContent, smsType, international, remark, secretId):
         self.templateName = templateName
         self.templateContent = templateContent
         self.smsType = smsType
         self.international = international
         self.remark = remark
-        self.statusCode = 0
+        self.secretId = secretId
 
     def to_json(self):
         return {
@@ -60,9 +60,10 @@ class SmsSign(db.Model):
     statusCode = db.Column(db.Integer, default=0)
     reviewReply = db.Column(db.String(500))
     createTime = db.Column(db.DateTime, default=datetime.datetime.now)
+    secretId = db.Column(db.String(100))
 
     def __init__(self, signName, signType, documentType, international, usedMethod, proofImage, commissionImage,
-                 remark):
+                 remark, secretId):
         self.signName = signName
         self.signType = signType
         self.documentType = documentType
@@ -71,6 +72,7 @@ class SmsSign(db.Model):
         self.proofImage = proofImage
         self.commissionImage = commissionImage
         self.remark = remark
+        self.secretId = secretId
 
     def to_json(self):
         return {

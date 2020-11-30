@@ -18,7 +18,6 @@ class SmSModelView(ModelView):
     create_modal = True
     edit_modal = True
     can_export = True
-    column_editable_list = ('statusCode', 'reviewReply')
 
 
 # column_searchable_list = ['name', 'email']
@@ -42,6 +41,9 @@ class SmSTemplateModelView(SmSModelView):
         ]
 
     }
+    column_editable_list = ('statusCode', 'reviewReply')
+    column_searchable_list = ['templateId', 'templateName', 'secretId']
+    column_filters = ['templateId', 'templateName', 'secretId']
 
     # column_formatters = dict(statusCode=lambda x: '审核成功')
     # column_choices = {
@@ -95,7 +97,15 @@ class SmSSignModelView(SmSModelView):
         ]
 
     }
+    column_editable_list = ('statusCode', 'reviewReply')
+    column_searchable_list = ['signId', 'signName', 'secretId']
+    column_filters = ['signId', 'signName', 'secretId']
+
+
+class UserModelView(SmSModelView):
+    column_labels = dict(status="是否有效")
 
 
 admin.add_view(SmSTemplateModelView(databases.SmsTemplate, db.session, name="模板"))
 admin.add_view(SmSSignModelView(databases.SmsSign, db.session, name="签名"))
+admin.add_view(UserModelView(databases.User, db.session, name="密钥"))
