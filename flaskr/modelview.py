@@ -97,5 +97,5 @@ class SmSSignModelView(SmSModelView):
     }
 
 
-admin.add_view(SmSTemplateModelView(databases.SmsTemplate, db.session, name="短信模板"))
-admin.add_view(SmSSignModelView(databases.SmsSign, db.session, name="签名模板"))
+admin.add_view(SmSTemplateModelView(databases.SmsTemplate, db.session, name="模板"))
+admin.add_view(SmSSignModelView(databases.SmsSign, db.session, name="签名"))

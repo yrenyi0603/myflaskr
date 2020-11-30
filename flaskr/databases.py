@@ -63,7 +63,7 @@ class SmsSign(db.Model):
 
     def __init__(self, signName, signType, documentType, international, usedMethod, proofImage, commissionImage,
                  remark):
-        self.templateName = signName
+        self.signName = signName
         self.signType = signType
         self.documentType = documentType
         self.international = international
@@ -74,8 +74,8 @@ class SmsSign(db.Model):
 
     def to_json(self):
         return {
-            "SignId": self.templateId,
-            "SignName": self.templateName,
+            "SignId": self.signId,
+            "SignName": self.signName,
             "International": self.international,
             "CreateTime": self.createTime.strftime('%Y-%m-%d %H:%M:%S'),
             "ReviewReply": self.reviewReply,

@@ -7,14 +7,24 @@ from flask_admin import Admin
 db = SQLAlchemy()
 admin = Admin(name='HRO测试Mock服务', template_mode='bootstrap4')
 
+HOST = '192.168.8.152'
+PORT = '3307'
+DATABASE = 'flaskr'
+USERNAME = 'root'
+PASSWORD = '123456'
+
+DB_URI = "mysql+pymysql://{username}:{password}@{host}:{port}/{db}?charset=utf8".format(username=USERNAME,
+                                                                                        password=PASSWORD, host=HOST,
+                                                                                        port=PORT, db=DATABASE)
+
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-        SQLALCHEMY_DATABASE_URI='sqlite:///data/test.db',
+        # DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+        SQLALCHEMY_DATABASE_URI=DB_URI,
         SQLALCHEMY_TRACK_MODIFICATIONS=True,
         FLASK_ADMIN_SWATCH='cerulean'
     )
