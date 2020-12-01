@@ -32,8 +32,9 @@ class SmSTemplateModelView(SmSModelView):
             ('0', '普通短信'),
         ],
         'statusCode': [
-            ('1', '审核通过'),
-            ('0', '审核失败'),
+            ('0', '审核通过'),
+            ('1', '审核中'),
+            ('-1', '审核未通过'),
         ],
         'international': [
             ('1', '国际/港澳台短信'),
@@ -88,8 +89,9 @@ class SmSSignModelView(SmSModelView):
             ('1', '他用'),
         ],
         'statusCode': [
-            ('1', '审核通过'),
-            ('0', '审核失败'),
+            ('0', '审核通过'),
+            ('1', '审核中'),
+            ('-1', '审核未通过'),
         ],
         'international': [
             ('1', '国际/港澳台短信'),
