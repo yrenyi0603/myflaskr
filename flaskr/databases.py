@@ -2,7 +2,7 @@ from flaskr import db
 import datetime
 
 from flask_admin.model import typefmt
-
+import time
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -35,11 +35,14 @@ class SmsTemplate(db.Model):
         self.secretId = secretId
 
     def to_json(self):
+
+        print("xxxxxxxxxx{}".format(int(time.mktime(self.createTime.timetuple()))
+))
         return {
             "TemplateId": self.templateId,
             "TemplateName": self.templateName,
             "International": self.international,
-            "CreateTime": self.createTime.strftime('%Y-%m-%d %H:%M:%S'),
+            "CreateTime": int(time.mktime(self.createTime.timetuple())),
             "ReviewReply": self.reviewReply,
             "StatusCode": self.statusCode
         }
@@ -75,11 +78,12 @@ class SmsSign(db.Model):
         self.secretId = secretId
 
     def to_json(self):
+
         return {
             "SignId": self.signId,
             "SignName": self.signName,
             "International": self.international,
-            "CreateTime": self.createTime.strftime('%Y-%m-%d %H:%M:%S'),
+            "CreateTime": int(time.mktime(self.createTime.timetuple())),
             "ReviewReply": self.reviewReply,
             "StatusCode": self.statusCode
         }

@@ -1,0 +1,147 @@
+[2020-12-02 17:29:10,356] WARNING in _internal:  * Debugger is active!
+[2020-12-02 17:29:10,359] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 17:29:10,369] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 17:32:14,742] INFO in _internal:  * Detected change in 'C:\\Users\\Athur\\PycharmProjects\\myflaskr\\flaskr\\__init__.py', reloading
+[2020-12-02 17:32:15,520] WARNING in _internal:  * Debugger is active!
+[2020-12-02 17:32:15,523] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 17:32:15,533] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 17:32:32,201] INFO in _internal:  * Detected change in 'C:\\Users\\Athur\\PycharmProjects\\myflaskr\\flaskr\\__init__.py', reloading
+[2020-12-02 17:32:32,812] WARNING in _internal:  * Debugger is active!
+[2020-12-02 17:32:32,816] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 17:32:32,826] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 17:32:33,889] INFO in _internal:  * Detected change in 'C:\\Users\\Athur\\PycharmProjects\\myflaskr\\flaskr\\__init__.py', reloading
+[2020-12-02 17:32:34,491] WARNING in _internal:  * Debugger is active!
+[2020-12-02 17:32:34,494] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 17:32:34,504] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 17:32:42,395] INFO in _internal:  * Restarting with stat
+[2020-12-02 17:32:42,956] WARNING in _internal:  * Debugger is active!
+[2020-12-02 17:32:42,959] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 17:32:42,970] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 17:32:51,659] INFO in smstemplateview: Host: 192.168.8.74:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+
+[2020-12-02 17:32:51,660] INFO in smstemplateview: b''
+[2020-12-02 17:32:51,660] INFO in smstemplateview: «Î«Û∞¸Ω‚Œˆ ß∞‹,«ÎºÏ≤ÈºÏ≤È«Î«Û «∑Ò’˝»∑£∫{}
+[2020-12-02 17:32:51,663] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:32:51] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-12-02 17:32:55,264] INFO in smstemplateview: Host: 192.168.8.74:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+
+[2020-12-02 17:32:55,265] INFO in smstemplateview: b''
+[2020-12-02 17:32:55,265] INFO in smstemplateview: «Î«Û∞¸Ω‚Œˆ ß∞‹,«ÎºÏ≤ÈºÏ≤È«Î«Û «∑Ò’˝»∑£∫{}
+[2020-12-02 17:32:55,265] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:32:55] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-12-02 17:32:56,557] INFO in smstemplateview: Host: 192.168.8.74:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+
+[2020-12-02 17:32:56,558] INFO in smstemplateview: b''
+[2020-12-02 17:32:56,558] INFO in smstemplateview: «Î«Û∞¸Ω‚Œˆ ß∞‹,«ÎºÏ≤ÈºÏ≤È«Î«Û «∑Ò’˝»∑£∫{}
+[2020-12-02 17:32:56,558] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:32:56] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-12-02 17:33:02,835] INFO in smstemplateview: Host: 192.168.8.74:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+
+[2020-12-02 17:33:02,836] INFO in smstemplateview: b''
+[2020-12-02 17:33:02,836] INFO in smstemplateview: «Î«Û∞¸Ω‚Œˆ ß∞‹,«ÎºÏ≤ÈºÏ≤È«Î«Û «∑Ò’˝»∑£∫{}
+[2020-12-02 17:33:02,837] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:33:02] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-12-02 17:33:04,384] INFO in smstemplateview: Host: 192.168.8.74:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+
+[2020-12-02 17:33:04,384] INFO in smstemplateview: b''
+[2020-12-02 17:33:04,385] INFO in smstemplateview: «Î«Û∞¸Ω‚Œˆ ß∞‹,«ÎºÏ≤ÈºÏ≤È«Î«Û «∑Ò’˝»∑£∫{}
+[2020-12-02 17:33:04,385] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:33:04] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-12-02 17:33:20,183] INFO in smstemplateview: Host: 192.168.8.74:5000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+
+[2020-12-02 17:33:20,183] INFO in smstemplateview: b''
+[2020-12-02 17:33:20,184] INFO in smstemplateview: «Î«Û∞¸Ω‚Œˆ ß∞‹,«ÎºÏ≤ÈºÏ≤È«Î«Û «∑Ò’˝»∑£∫{}
+[2020-12-02 17:33:20,184] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:33:20] "[37mGET / HTTP/1.1[0m" 200 -
+[2020-12-02 17:33:24,641] INFO in smstemplateview: Accept-Encoding: identity
+Content-Length: 251
+Content-Type: application/json
+Host: 192.168.8.74:5000
+X-Tc-Action: AddSmsSign
+X-Tc-Requestclient: SDK_PYTHON_3.0.298
+X-Tc-Timestamp: 1606901604
+X-Tc-Version: 2019-07-11
+X-Tc-Region: ap-guangzhou
+X-Tc-Language: en-US
+Authorization: TC3-HMAC-SHA256 Credential=1AKIDoXWQ51ySSJrMwjC5ornTs0D9l8dW2coC/2020-12-02/192/tc3_request, SignedHeaders=content-type;host, Signature=9c6ee9f1a37a78c7b17851dfa1a089727b3380567c48da3a22ac6e414c07c010
+
+
+[2020-12-02 17:33:24,641] INFO in smstemplateview: b'{"SignName": "f\\u70e6\\u70e6fafda\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6", "SignType": 1, "DocumentType": 1, "International": 1, "UsedMethod": 1, "ProofImage": "ffdafdsafa", "CommissionImage": "fdfdafdsafa", "Remark": "fdadfasdfd"}'
+[2020-12-02 17:33:24,652] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:33:24] "[37mPOST / HTTP/1.1[0m" 200 -
+[2020-12-02 17:33:34,925] INFO in smstemplateview: Accept-Encoding: identity
+Content-Length: 251
+Content-Type: application/json
+Host: 192.168.8.74:5000
+X-Tc-Action: AddSmsSign
+X-Tc-Requestclient: SDK_PYTHON_3.0.298
+X-Tc-Timestamp: 1606901614
+X-Tc-Version: 2019-07-11
+X-Tc-Region: ap-guangzhou
+X-Tc-Language: en-US
+Authorization: TC3-HMAC-SHA256 Credential=1AKIDoXWQ51ySSJrMwjC5ornTs0D9l8dW2coC/2020-12-02/192/tc3_request, SignedHeaders=content-type;host, Signature=008a7da2ed3d3a9341be44d7ab2c03c47a8ea6e6910aa4e922275ce586892476
+
+
+[2020-12-02 17:33:34,925] INFO in smstemplateview: b'{"SignName": "f\\u70e6\\u70e6fafda\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6\\u70e6", "SignType": 1, "DocumentType": 1, "International": 1, "UsedMethod": 1, "ProofImage": "ffdafdsafa", "CommissionImage": "fdfdafdsafa", "Remark": "fdadfasdfd"}'
+[2020-12-02 17:33:34,935] INFO in _internal: 192.168.8.74 - - [02/Dec/2020 17:33:34] "[37mPOST / HTTP/1.1[0m" 200 -
+[2020-12-02 19:59:44,274] INFO in _internal:  * Detected change in 'C:\\Users\\Athur\\PycharmProjects\\myflaskr\\flaskr\\databases.py', reloading
+[2020-12-02 19:59:44,329] INFO in _internal:  * Restarting with stat
+[2020-12-02 19:59:45,004] WARNING in _internal:  * Debugger is active!
+[2020-12-02 19:59:45,008] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 19:59:45,017] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 19:59:52,663] INFO in _internal:  * Restarting with stat
+[2020-12-02 19:59:53,593] WARNING in _internal:  * Debugger is active!
+[2020-12-02 19:59:53,596] INFO in _internal:  * Debugger PIN: 221-874-725
+[2020-12-02 19:59:53,606] INFO in _internal:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+[2020-12-02 20:00:18,648] INFO in _internal:  * Detected change in 'C:\\Users\\Athur\\PycharmProjects\\myflaskr\\flaskr\\__init__.py', reloading
+[2020-12-02 20:00:18,704] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:01:37,561] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:02:52,271] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:03:27,369] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:05:07,176] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:05:47,445] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:06:15,182] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:06:18,051] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:07:25,522] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:07:47,069] INFO in _internal:  * Restarting with stat
+[2020-12-02 20:08:10,679] INFO in _internal:  * Restarting with stat

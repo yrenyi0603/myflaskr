@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 # app = Flask(__name__)
 from flask_admin import Admin
+from logging.config import dictConfig
 
 db = SQLAlchemy()
 admin = Admin(name='HRO测试Mock服务', template_mode='bootstrap4')
@@ -16,6 +17,35 @@ PASSWORD = '123456'
 DB_URI = "mysql+pymysql://{username}:{password}@{host}:{port}/{db}?charset=utf8".format(username=USERNAME,
                                                                                         password=PASSWORD, host=HOST,
                                                                                         port=PORT, db=DATABASE)
+
+dictConfig({
+    'version': 1,
+    'formatters': {'default': {
+        'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+    }},
+
+    'handlers': {
+        'wsgi': {
+            'class': 'logging.StreamHandler',
+            'stream': 'ext://flask.logging.wsgi_errors_stream',
+            'formatter': 'default',
+
+        },
+        'file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            # 'stream': 'ext://flask.logging.wsgi_errors_stream',
+            'formatter': 'default',
+            'filename': 'logconfig.log',
+            'maxBytes': 1024 * 1024 * 10,
+            'backupCount': 3
+
+        }
+    },
+    'root': {
+        'level': 'INFO',
+        'handlers': ['wsgi']
+    }
+})
 
 
 def create_app(test_config=None):

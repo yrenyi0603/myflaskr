@@ -1,6 +1,7 @@
 from flask import (
-    Blueprint, request, jsonify
+    Blueprint, request, jsonify, current_app
 )
+
 from .databases import SmsSign, SmsTemplate, User
 from flaskr import db
 import uuid
@@ -14,12 +15,15 @@ tp = Blueprint('smstemplateview', __name__)
 
 @tp.route("/", methods=['POST', 'GET'])
 def index():
+    current_app.logger.info(request.headers)
+    current_app.logger.info(request.data)
     try:
         action = request.headers['X-Tc-Action']
         secretId = request.headers['Authorization']
         secretId = str(secretId).split(',')[0].split('/')[0].split('=')[1]
         req = request.json
     except Exception:
+        current_app.logger.info("请求包解析失败,请检查检查请求是否正确：{}")
         return {
             "Response": {
                 "Error": {
