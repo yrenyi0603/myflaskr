@@ -43,7 +43,7 @@ dictConfig({
     },
     'root': {
         'level': 'INFO',
-        'handlers': ['wsgi']
+        'handlers': ['file']
     }
 })
 
