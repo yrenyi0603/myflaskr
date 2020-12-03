@@ -35,9 +35,6 @@ class SmsTemplate(db.Model):
         self.secretId = secretId
 
     def to_json(self):
-
-        print("xxxxxxxxxx{}".format(int(time.mktime(self.createTime.timetuple()))
-))
         return {
             "TemplateId": self.templateId,
             "TemplateName": self.templateName,
