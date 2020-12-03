@@ -4,6 +4,7 @@ from flask import Flask
 # app = Flask(__name__)
 from flask_admin import Admin
 from logging.config import dictConfig
+import uuid
 
 db = SQLAlchemy()
 admin = Admin(name='HRO测试Mock服务', template_mode='bootstrap4')
@@ -73,9 +74,18 @@ def create_app(test_config=None):
     #     pass
 
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return {
+                   "Response": {
+                       "Error": {
+                           "Code": "FailedOperation.FailResolvePacket",
+                           "Message": "方法不存在"
+                       },
+                       "RequestId": uuid.uuid4()
+                   }
+               }, 404
 
     db.init_app(app)
     admin.init_app(app=app, )

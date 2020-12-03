@@ -148,12 +148,6 @@ def index():
     current_app.logger.info(result)
     return jsonify(result)
 
-
-@tp.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
-
-
 def isvalid(secretId):
     user = User.query.filter(and_(User.secretId == secretId, User.status == True)).all()
     if user:
