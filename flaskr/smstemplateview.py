@@ -1,5 +1,5 @@
 from flask import (
-    Blueprint, request, jsonify, current_app
+    Blueprint, request, jsonify, current_app, render_template
 )
 
 from .databases import SmsSign, SmsTemplate, User
@@ -147,6 +147,11 @@ def index():
     result.update({'Response': res})
     current_app.logger.info(result)
     return jsonify(result)
+
+
+@tp.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 def isvalid(secretId):
