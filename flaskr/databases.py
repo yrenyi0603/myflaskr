@@ -4,6 +4,7 @@ import datetime
 from flask_admin.model import typefmt
 import time
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     secretId = db.Column(db.String(100), unique=True, nullable=False)
@@ -54,9 +55,10 @@ class SmsSign(db.Model):
     documentType = db.Column(db.Integer)
     international = db.Column(db.Integer)
     usedMethod = db.Column(db.Integer)
-    proofImage = db.Column(db.String(1000))
-    commissionImage = db.Column(db.String(1000))
-    remark = db.Column(db.String(500))
+    proofImage = db.Column(db.Text)
+    commissionImage = db.Column(db.Text)
+    # remark = db.Column(db.String(500))
+    remark = db.Column(db.Text)
     statusCode = db.Column(db.Integer, default=1)
     reviewReply = db.Column(db.String(500))
     createTime = db.Column(db.DateTime, default=datetime.datetime.now)
@@ -75,7 +77,6 @@ class SmsSign(db.Model):
         self.secretId = secretId
 
     def to_json(self):
-
         return {
             "SignId": self.signId,
             "SignName": self.signName,

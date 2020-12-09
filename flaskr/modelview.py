@@ -102,6 +102,7 @@ class SmSSignModelView(SmSModelView):
     column_editable_list = ('statusCode', 'reviewReply')
     column_searchable_list = ['signId', 'signName', 'secretId']
     column_filters = ['signId', 'signName', 'secretId']
+    column_exclude_list = ['proofImage', 'commissionImage']
 
 
 class UserModelView(SmSModelView):

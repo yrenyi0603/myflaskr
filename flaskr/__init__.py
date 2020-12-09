@@ -36,7 +36,7 @@ dictConfig({
             'class': 'logging.handlers.RotatingFileHandler',
             # 'stream': 'ext://flask.logging.wsgi_errors_stream',
             'formatter': 'default',
-            'filename': 'logconfig.log',
+            'filename': 'hro.log',
             'maxBytes': 1024 * 1024 * 10,
             'backupCount': 3
 
